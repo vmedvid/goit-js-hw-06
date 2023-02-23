@@ -15,11 +15,9 @@ const images = [
 
 const galleryOfImagesEl = document.querySelector(".gallery");
 
-const markup = images
-  .map(
-    (image) =>
-      `<li class="gallery__item"><img class="gallery__item-image" src="${image.url}" alt="${image.alt}"></img></li>`
-  )
-  .join("");
+const makeGalleryCard = ({ url, alt }) =>
+  `<li class="gallery__item"><img class="gallery__item-image" src="${url}" alt="${alt}"></img></li>`;
+
+const markup = images.map((image) => makeGalleryCard(image)).join("");
 
 galleryOfImagesEl.insertAdjacentHTML("beforeend", markup);
