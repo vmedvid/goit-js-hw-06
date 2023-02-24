@@ -1,6 +1,6 @@
 const loginFormEl = document.querySelector(".login-form");
 
-function handleSubmitAndValidation(event) {
+function handleLoginFormSubmit(event) {
   event.preventDefault();
   const {
     elements: { email, password },
@@ -18,4 +18,4 @@ function handleSubmitAndValidation(event) {
   }
 }
 
-loginFormEl.addEventListener("submit", handleSubmitAndValidation);
+loginFormEl.addEventListener("submit", handleLoginFormSubmit);

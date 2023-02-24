@@ -1,14 +1,15 @@
-const inputEl = document.getElementById("validation-input");
-const quantityOfSymbols = Number(inputEl.dataset.length);
+const symbolsInputEl = document.getElementById("validation-input");
 
-const checkQuantityOfSymbols = (event) => {
-  if (event.currentTarget.value.length === quantityOfSymbols) {
-    inputEl.classList.add("valid");
-    inputEl.classList.remove("invalid");
+const handleSymbolsInput = (event) => {
+  if (
+    event.currentTarget.value.length === Number(symbolsInputEl.dataset.length)
+  ) {
+    symbolsInputEl.classList.add("valid");
+    symbolsInputEl.classList.remove("invalid");
   } else {
-    inputEl.classList.add("invalid");
-    inputEl.classList.remove("valid");
+    symbolsInputEl.classList.add("invalid");
+    symbolsInputEl.classList.remove("valid");
   }
 };
 
-inputEl.addEventListener("blur", checkQuantityOfSymbols);
+symbolsInputEl.addEventListener("blur", handleSymbolsInput);
