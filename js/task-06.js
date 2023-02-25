@@ -1,14 +1,17 @@
 const symbolsInputEl = document.getElementById("validation-input");
 
+function changeСlasses(element, addClass, removeClass) {
+  element.classList.add(addClass);
+  element.classList.remove(removeClass);
+}
+
 const handleSymbolsInput = (event) => {
   if (
     event.currentTarget.value.length === Number(symbolsInputEl.dataset.length)
   ) {
-    symbolsInputEl.classList.add("valid");
-    symbolsInputEl.classList.remove("invalid");
+    changeСlasses(symbolsInputEl, "valid", "invalid");
   } else {
-    symbolsInputEl.classList.add("invalid");
-    symbolsInputEl.classList.remove("valid");
+    changeСlasses(symbolsInputEl, "invalid", "valid");
   }
 };
 

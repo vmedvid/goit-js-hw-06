@@ -6,16 +6,15 @@ function handleLoginFormSubmit(event) {
     elements: { email, password },
   } = event.currentTarget;
   const formEntries = {
-    email: email.value,
+    email: email.value.trim(),
     password: password.value,
   };
 
-  if (email.value === "" || password.value === "") {
-    alert("Всі поля повинні бути заповнені!");
-  } else {
-    console.log(formEntries);
-    event.currentTarget.reset();
+  if (email.value.trim() === "" || password.value === "") {
+    return alert("Всі поля повинні бути заповнені!");
   }
+  console.log(formEntries);
+  event.currentTarget.reset();
 }
 
 loginFormEl.addEventListener("submit", handleLoginFormSubmit);
